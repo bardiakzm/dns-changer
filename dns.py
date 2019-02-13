@@ -1,6 +1,11 @@
 import os
 
+
+
+
+print("DONT FORGET TO RUN AS ADMINISTRATOR!!!")
 a = int(input("keys:\n"
+          "enter 0 if you dont know what is your dns "
           "enter 1 for shekan DNS \n"
           "enter 2 for 1.1.1.1 and 8.8.8.8 DNS \n"
           "enter 3 for 8.8.8.8 and 8.8.4.4 DNS \n"
@@ -14,6 +19,8 @@ a = int(input("keys:\n"
 
 
 
+b = 0
+
 if a == 2 :
     os.system('netsh interface ip set dns name="Wi-Fi" source="static" address="1.1.1.1"')
     os.system('netsh interface ip add dns name="Wi-Fi" addr="8.8.8.8" index=2')
@@ -25,10 +32,12 @@ elif a == 3 :
     os.system('netsh interface ip add dns name="Wi-Fi" addr="8.8.4.4" index=2')
 elif a == 4 :
     os.system('netsh interface ip set dns name="Wi-Fi" source="static" address="1.1.1.1"')
-    os.system('netsh interface ip add dns name="Wi-Fi" addr="1.0.0.1" index=2')
+    os.system('netsh interface ip add dns name="Wi-Fi" addr="1.0.0.1" index=2') #2606:4700:4700::1001 , 2606:4700:4700::1111s
+    b += 1
 elif a == 5 :
     os.system('netsh interface ip set dns name="Wi-Fi" source="static" address="208.67.222.222"')
     os.system('netsh interface ip add dns name="Wi-Fi" addr="208.67.220.220" index=2')
+    b += 1
 elif a == 6 :
     os.system('netsh interface ip set dns name="Wi-Fi" source="static" address="209.244.0.3"')
     os.system('netsh interface ip add dns name="Wi-Fi" addr="209.244.0.4" index=2')
@@ -42,22 +51,13 @@ elif a == 9 :
     os.system('netsh interface ip set dns name="Wi-Fi" source="static" address="77.88.8.8"')
     os.system('netsh interface ip add dns name="Wi-Fi" addr="77.88.8.1" index=2')
 elif a == 0 :
-    print("this option is not ready yet!")
+    os.system('echo exit | nslookup')
 
+#open dns ipv6 2620:0:ccd::2 , 2620:0:ccc::2
 
-
-print("dns changed succfully")    
-    
-
-
-        
-       
-
-
-
-
-
-
+print("dns changed succfully")
+os.system('echo exit | nslookup')
+input('Press ENTER to exit')
 
 
 
