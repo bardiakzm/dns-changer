@@ -1,5 +1,6 @@
-you should change the (Wi-Fi) in name="Wi-Fi" to your internet adapter name
-
+you should change the (Wi-Fi) in adp="Wi-Fi" to your internet adapter name
+just for windows
+run it from administrator command line
 
 
 
