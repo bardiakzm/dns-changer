@@ -3,7 +3,7 @@ import os
 
 
 
-print("DONT FORGET TO RUN AS ADMINISTRATOR!!!")
+print("      DONT FORGET TO RUN AS ADMINISTRATOR!!!")
 a = int(input("keys:\n"
           "enter 0 if you dont know what is your dns "
           "enter 1 for shekan DNS \n"
