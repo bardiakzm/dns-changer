@@ -63,7 +63,7 @@ if is_admin():
 
     elif a == 0 :
         os.system('echo exit | nslookup')
-        b += 1
+       
 
     #open dns ipv6 2620:0:ccd::2 , 2620:0:ccc::2
 
