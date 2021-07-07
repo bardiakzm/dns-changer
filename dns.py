@@ -24,7 +24,10 @@ if is_admin():
               "enter 9 for yandex DNS \n"
               "enter 10 for just 8.8.4.4 as primary DNS \n"
 			  "enter 11 for addguard DNS \n"
-			  "enter 12 for Iran DNS \n"
+			  "enter 12 for Iran DNS (this DNS may take a longer time to set ) \n"
+              "\n"
+              "**enter 99 for clearing DNS cache \n"
+              "\n"
               ":-->>"))
     a = int(b)
 
@@ -68,17 +71,26 @@ if is_admin():
         os.system('netsh interface ip add dns name=' + adp + ' addr="176.103.130.134" index=2')
 
     elif a == 12 :
-        os.system('netsh interface ip set dns name=' + adp + ' source="static" address="217.218.127.127"')
+        os.system('netsh interface ip set dns name=' + adp + ' source="static" address="217.218.155.155"')
         os.system('netsh interface ip add dns name=' + adp + ' addr="217.218.155.155" index=2')
 
     elif a == 0 :
         os.system('echo exit | nslookup')
 
+    elif a == 99 :
+        os.system('ipconfig /flushdns')
+        print("Your DNS cache is now clear")
+
     if a == 10 :
         os.system('netsh interface ip set dns name=' + adp + ' source="static" address="8.8.4.4"')
 
 
-    print("dns changed succfully")
+    #2606:4700:4700::1001 , 2606:4700:4700::1111s
+
+    #open dns ipv6 2620:0:ccd::2 , 2620:0:ccc::2
+
+
+    print("Task completed successfully")
     os.system('echo exit | nslookup')
     input('Press ENTER to exit')
 
